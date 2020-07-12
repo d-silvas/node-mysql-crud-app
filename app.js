@@ -5,7 +5,7 @@ const path = require('path');
 
 const app = express();
 
-const playerRoutes = require('./routes/player.routes');
+const taskRoutes = require('./routes/task.routes');
 const homeRoutes = require('./routes/index.routes');
 const port = 2000;
 
@@ -16,7 +16,7 @@ const db = mysql.createConnection ({
     host: 'localhost',
     user: 'root',
     password: '123456',
-    database: 'socka'
+    database: 'tasks'
 });
 
 // connect to database
@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'public'))); // configure express to
 
 // routes for the app
 app.use('/', homeRoutes);
-app.use('/player', playerRoutes);
+app.use('/task', taskRoutes);
 app.get('*', function(req, res, next){
     res.status(404);
 

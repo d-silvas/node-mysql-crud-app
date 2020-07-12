@@ -1,10 +1,12 @@
-CREATE DATABASE socka;
-CREATE TABLE IF NOT EXISTS `players` (
+CREATE DATABASE tasks;
+USE tasks;
+CREATE TABLE IF NOT EXISTS `tasks` (
     `id` int(5) NOT NULL AUTO_INCREMENT,
-    `first_name` varchar(255) NOT NULL,
-    `last_name` varchar(255) NOT NULL,
-    `position` varchar(255) NOT NULL,
-    `number` int(11) NOT NULL,
-    `user_name` varchar(20) NOT NULL,
+    `description` varchar(4096) NOT NULL,
+    `area` varchar(255) NOT NULL,
+    `priority` int(1) NOT NULL,
+    `predecessors` varchar(2048) NULL,
+    `date` date NULL,
+    `periodicity` int(11) NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;

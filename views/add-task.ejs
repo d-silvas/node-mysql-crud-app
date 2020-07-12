@@ -1,0 +1,47 @@
+<% include partials/header.ejs %>
+    <div>
+        <% if (message != '') { %>
+            <p ><%= message %></p>
+        <% } %>
+        <form action="" method="post">
+            <div>
+                <label for="description">Description</label>
+                <input type="text" name="description" id="description" required>
+            </div>
+            <div>
+                <label for="area">Area</label>
+                <select id="area" name="area" required>
+                    <option>Cybersecurity</option>
+                    <option>Sports</option>
+                    <option>Domestic</option>
+                    <option>Comics and figures</option>
+                    <option>Finance</option>
+                    <option>Music</option>
+                    <option>Organizational</option>
+                    <option>Health and safety</option>
+                    <option>Social</option>
+                    <option>Sales</option>
+                </select>
+            </div>
+            <div>
+                <label for="priority">Priority</label>
+                <input type="number" name="priority" id="priority" max="9" min="0" required>
+            </div>
+            <div>
+                <label for="predecessors">Predecessors</label>
+                <input type="text" name="predecessors" id="predecessors">
+            </div>
+            <div>
+                <label for="date">Date</label>
+                <input type="date" name="date" id="date" required>
+            </div>
+            <div>
+                <label for="periodicity">Periodicity</label>
+                <input type="number" name="periodicity" id="periodicity" min="0" required>
+            </div>
+            <button type="submit">Add Task</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

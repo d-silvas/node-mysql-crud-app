@@ -1,17 +1,14 @@
-const fs = require('fs');
-
 exports.getHomePage = (req, res) => {
-    let query = "SELECT * FROM `players` ORDER BY id ASC"; // query database to get all the players
+    let query = "SELECT * FROM `tasks` ORDER BY id ASC";
 
-    // execute query
     db.query(query, (err, result) => {
         if (err) {
             res.redirect('/');
         }
 
         res.render('index.ejs', {
-            title: "Welcome to Socka | View Players",
-            players: result
+            title: "Welcome to Tasks | View Tasks",
+            tasks: result
         });
     });
 };

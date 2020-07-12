@@ -1,37 +1,39 @@
 <% include partials/header.ejs %>
     <div>
-        <% if (players.length > 0) { %>
+        <% if (tasks.length > 0) { %>
             <table>
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
-                        <th scope="col">Position</th>
-                        <th scope="col">Number</th>
-                        <th scope="col">Username</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Area</th>
+                        <th scope="col">Priority</th>
+                        <th scope="col">Predecessors</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Periodicity</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <% players.forEach((player, index) => { %>
+                    <% tasks.forEach((task, index) => { %>
                         <tr>
-                            <th scope="row"><%= player.id %></th>
-                            <td><%= player.first_name %></td>
-                            <td><%= player.last_name %></td>
-                            <td><%= player.position %></td>
-                            <td><%= player.number %></td>
-                            <td>@<%= player.user_name %></td>
+                            <th scope="row"><%= task.id %></th>
+                            <td><%= task.description %></td>
+                            <td><%= task.area %></td>
+                            <td><%= task.priority %></td>
+                            <td><%= task.predecessors %></td>
+                            <td><%= task.date %></td>
+                            <td><%= task.periodicity %></td>
                             <td>
-                                <a href="player/edit/<%= player.id %>" target="_blank" rel="noopener">Edit</a>
-                                <a href="player/delete/<%= player.id %>">Delete</a>
+                                <a href="task/edit/<%= task.id %>" target="_blank" rel="noopener">Edit</a>
+                                <a href="task/delete/<%= task.id %>">Delete</a>
                             </td>
                         </tr>
                     <% }) %>
                 </tbody>
             </table>
         <% } else { %>
-            <p>No players found. Go <a href="/player/add" >here</a> to add players.</p>
+            <p>No tasks found. Go <a href="/task/add" >here</a> to add tasks.</p>
         <% } %>
     </div>
 </div>

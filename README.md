@@ -9,7 +9,7 @@ const db = mysql.createConnection ({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'socka'
+    database: 'tasks'
 });
 ```
 7. Run `npm install` on the current folder
