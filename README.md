@@ -15,3 +15,25 @@ const db = mysql.createConnection ({
 7. Run `npm install` on the current folder
 8. Run `npm start` on the current folder
 9. Open http://localhost:2000
+
+## Update version 2.0 - tasks
+
+10. Remove this project's folder. Re-download it from git. Use the new project's folder like before.
+11. Review the credentials inside `app.js` (step 6). If necessary change them:
+```
+const db = mysql.createConnection ({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'tasks'
+});
+```
+12. Run the following SQL script through phpmyadmin: `DROP DATABASE players;`
+13. Re-run the SQL script in `create_db.sql` (step 5).
+14. Run `npm install` on the current folder
+15. Run `npm start` on the current folder
+16. Open http://localhost:2000
+
+## How to run after installation
+8. Run `npm start` on the current folder
+9. Open http://localhost:2000
